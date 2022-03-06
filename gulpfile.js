@@ -11,6 +11,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const jsOrder = require('./src/scripts/order.js');
+const nunjucks = require('gulp-nunjucks');
 
 let isProd = false;
 
@@ -42,6 +43,12 @@ function jsTask() {
         .pipe(dest('dist/js'));
 }
 
+function njk(){
+    return src('src/*.html')
+        .pipe(nunjucks.compile())
+        .pipe(dest('dist'))
+};
+
 function serve() {
     browserSync.init({
         server: {
@@ -52,7 +59,8 @@ function serve() {
     watch('src/img/*', imgTask);
     watch('src/styles/**/*.less', cssTask);
     watch('src/html/**/*.pug', htmlTask);
-    watch('src/scripts/**/*.js', jsTask)
+    watch('src/scripts/**/*.js', jsTask);
+    watch('src/**/*.html', njk);
 
     watch("dist/**/*")
         .on('change', browserSync.reload);
@@ -74,7 +82,8 @@ module.exports = {
             htmlTask,
             cssTask,
             imgTask,
-            jsTask
+            jsTask,
+            njk
         ),
         serve
     ),
@@ -85,7 +94,8 @@ module.exports = {
             htmlTask,
             cssTask,
             imgTask,
-            jsTask
+            jsTask,
+            njk
         )
     )
 };
