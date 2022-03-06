@@ -1,7 +1,6 @@
 const {src, dest, parallel, watch, series} = require('gulp');
 const {join} = require('path');
 const less = require('gulp-less');
-const pug = require('gulp-pug');
 const imagemin = require('gulp-imagemin');
 const minifyCSS = require('gulp-csso');
 const browserSync = require('browser-sync').create();
@@ -16,8 +15,8 @@ const nunjucks = require('gulp-nunjucks');
 let isProd = false;
 
 function htmlTask() {
-    return src(['index.pug'].map(s => join('src/html', s)))
-        .pipe(pug())
+    return src(['index.html'].map(s => join('src/layouts', s)))
+        .pipe(nunjucks.compile())
         .pipe(rename(path => path.dirname = ''))
         .pipe(dest('dist'));
 }
@@ -43,12 +42,6 @@ function jsTask() {
         .pipe(dest('dist/js'));
 }
 
-function njk(){
-    return src('src/*.html')
-        .pipe(nunjucks.compile())
-        .pipe(dest('dist'))
-};
-
 function serve() {
     browserSync.init({
         server: {
@@ -60,7 +53,6 @@ function serve() {
     watch('src/styles/**/*.less', cssTask);
     watch('src/html/**/*.pug', htmlTask);
     watch('src/scripts/**/*.js', jsTask);
-    watch('src/**/*.html', njk);
 
     watch("dist/**/*")
         .on('change', browserSync.reload);
@@ -82,8 +74,7 @@ module.exports = {
             htmlTask,
             cssTask,
             imgTask,
-            jsTask,
-            njk
+            jsTask
         ),
         serve
     ),
@@ -94,8 +85,7 @@ module.exports = {
             htmlTask,
             cssTask,
             imgTask,
-            jsTask,
-            njk
+            jsTask
         )
     )
 };
