@@ -15,7 +15,7 @@ const nunjucks = require('gulp-nunjucks');
 let isProd = false;
 
 function htmlTask() {
-    return src(['index.html'].map(s => join('src/layouts', s)))
+    return src(['index.html'].map(s => join('src', s)))
         .pipe(nunjucks.compile())
         .pipe(rename(path => path.dirname = ''))
         .pipe(dest('dist'));
@@ -51,7 +51,7 @@ function serve() {
 
     watch('src/img/*', imgTask);
     watch('src/styles/**/*.less', cssTask);
-    watch('src/html/**/*.pug', htmlTask);
+    watch('src/**/*.html', htmlTask);
     watch('src/scripts/**/*.js', jsTask);
 
     watch("dist/**/*")
