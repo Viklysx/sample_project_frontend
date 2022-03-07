@@ -11,12 +11,19 @@ const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const jsOrder = require('./src/scripts/order.js');
 const nunjucks = require('gulp-nunjucks');
+const _nunjucks = require('nunjucks');
 
 let isProd = false;
 
 function htmlTask() {
+    const compileOptions = {
+        
+    }
     return src(['index.html'].map(s => join('src', s)))
-        .pipe(nunjucks.compile())
+        .pipe(nunjucks.compile(undefined, {
+            env: new _nunjucks.Environment(new _nunjucks.FileSystemLoader(join(__dirname, 'src')), compileOptions),
+            ...compileOptions
+        }))
         .pipe(rename(path => path.dirname = ''))
         .pipe(dest('dist'));
 }
