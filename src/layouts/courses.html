@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link href="https:/db.onlinewebfonts.com/c/31267e36af6f8dac65a56e78345e945e?family=NeueHaasUnicaW1G-Regular" rel="stylesheet" type="text/css"/>
+</head>
+
+<body class="courses-page">
+    {% include './headerMain.html' %}  
+    <main>
+        {% include './search.html' %}
+        <hr>
+        <div class="wrapper-courses">
+            {% for item in data.courses %}
+                <div class="course-block">
+                    <div class="course-block__content">
+                        <div>
+                            <p class="course-block__date">
+                                {{item.date}}
+                            </p>
+                        </div>
+                        <div class="course-block__title-wrapper">
+                            <p class="course-block__title">
+                                {{item.title}}
+                            </p>
+                            <p class="course-block__time">
+                                {{item.duration}}
+                            </p>
+                            {% if item.star === 'true' %}
+                                <p class="course-block__star">
+                                    <img src="img/star.svg" alt="star">
+                                </p>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <p class="course-block__description">
+                                {{item.description}}
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="course-block__edit"> 
+                           <img src="img/ic.svg" alt="edit">
+                           <span>Edit</span>
+                        </button>
+                        <button class="course-block__delete"> 
+                            <img src="img/ic-trash.svg" alt="delete">
+                            Delete
+                        </button>
+                    </div>
+                </div>                           
+            {% endfor %}
+            <div>
+                <button class="wrapper-courses__load">
+                    Load more
+                </button>
+            </div>  
+        </div>
+    </main>
+    {% include './footer.html' %}  
+</body>
+
+</html>

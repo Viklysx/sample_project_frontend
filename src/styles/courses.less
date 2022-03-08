@@ -1,0 +1,182 @@
+.courses-page {
+    footer {
+        padding-bottom: 24px;
+    }
+}
+
+.wrapper-courses {
+    .align-block();
+    
+    &__load {
+        .function-button();
+        width: 100%;
+        margin-bottom: 68px;
+        &:hover {
+            .hover-btn();
+        }
+
+        &:active {
+            .click-btn()
+        }
+    }
+}
+
+.wrapper-header {
+    &__elems {
+        .flex-items-center();
+
+        &-people,
+        &-logout {
+            .flex-items-center();
+        }
+
+        &-people {
+            margin-right: 2rem;
+
+            img {
+                margin-right: 0.75rem;
+            }
+
+            span {
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 24px;
+                color: @color-text;
+            }
+        }
+
+        &-logout {
+            img {
+                margin-right: 3px;
+            }
+        }
+    }
+}
+
+.wrapper-search {
+    .flex-space-between-center();
+    padding: 2rem 0;
+
+    &__btn {
+        .function-button();
+
+        &:hover {
+            .hover-btn();
+        }
+
+        &:active {
+            .click-btn()
+        }
+    }
+
+    input {
+        .text-input();
+        width: 587px;
+        margin-right: 16px;
+
+        &:hover {
+            .hover-input();
+        }
+
+        &:focus {
+            .focus-input();
+        }
+    }
+}
+
+.course-block {
+    .flex-space-between();
+    padding: 20px 32px 24px;
+    background: @white;
+    box-shadow: 0px 4px 12px @color-shadow;
+    border-radius: 12px;
+    margin: 24px 0px;
+
+    &__content {
+        width: 84%;
+    }
+
+    &__date {
+        font-family: "NeueHaasUnicaW1G-Regular";
+        font-size: 13px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.4);
+    }
+
+    &__title {
+        font-size: 24px;
+        line-height: 40px;
+        font-weight: 500;
+        color: @color-text;
+        margin-right: 8px;
+    }
+
+    &__time {
+        .flex-items-center();
+        padding: 4px 8px;
+        background: rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        height: fit-content;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    &__star {
+        margin-left: 10.5px;
+    }
+
+    &__title-wrapper {
+        .flex-items-center();
+    }
+
+    &__description {
+        font-size: 15px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+    &:nth-child(1) {
+        margin-top: 39px;
+    }
+
+    &__edit {
+        .function-button();
+        .flex-center();
+        width: 128px;
+        font-size: 15px;
+        height: 40px;
+        margin-bottom: 16px;
+        margin-top: 8px;
+
+        img {
+            margin-right: 11px;
+        }
+        &:hover {
+            .hover-btn();
+        }
+
+        &:active {
+            .click-btn()
+        }
+    }
+
+    &__delete {
+        .function-button();
+        .flex-center();
+        background-color: rgba(224, 31, 25, 0.12);
+        color: @color-red;
+        width: 128px;
+        font-size: 15px;
+        height: 40px;
+
+        img {
+            margin-right: 11px;
+        }
+        &:hover {
+            .hover-btn-red();
+        }
+
+        &:active {
+            .click-btn-red()
+        }
+    }
+}

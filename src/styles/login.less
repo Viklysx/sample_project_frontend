@@ -1,29 +1,12 @@
-.align-block {
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
-.flex-space-between {
-    display: flex;
-    justify-content: space-between;
-}
-
-.flex-column {
+.login-page {
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;   
+    footer {
+        padding-bottom: 39px;
+    }
 }
-
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@white: #FFFFFF;
-@border-gray: #EAECEE;
-@color-text: rgba(0, 0, 0, 0.8);
-@color-btn: #336FEE;
-
 
 .wrapper {
     .align-block();
@@ -51,37 +34,25 @@
         width: 29rem;
         height: 20.5rem;
         margin: 0 auto;
-        margin-top: 120px;
         background-color: @white;
         padding: 20px 32px 32px 32px;
         .flex-column();
         justify-content: space-between;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
+        box-shadow: 0px 4px 12px @color-shadow;
         border-radius: 12px;
 
         &__text {
             .flex-column();
 
             input {
-                font-family: Roboto;
-                font-weight: 400;
+                .text-input();
                 margin-top: 8px;
-                padding: 15px 10px;
-                border: 1px solid @border-gray;
-                box-sizing: border-box;
-                border-radius: 3px;
-                outline: none;
-                transition: 0.3s;
-                font-size: 17px;
-                color: @color-text;
-
                 &:hover {
-                    border: 1px solid #C7C9CC;
-                    transition: 0.3s;
+                    .hover-input();
                 }
 
                 &:focus {
-                    border: 1px solid #9299A2;
+                    .focus-input();
                 }
             }
 
@@ -101,35 +72,15 @@
         }
 
         &__btn {
-            .flex-center();
-            font-family: Roboto;
-            padding: 12px 32px;
+            .flex-center();   
+            .function-button();       
             width: 107px;
-            background: rgba(66, 139, 249, 0.12);
-            border: none;
-            border-radius: 40px;
-            color: @color-btn;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 17px;
-            line-height: 24px;
-            transition: 0.3s;
-
             &:hover {
-                background: rgba(66, 139, 249, 0.24);
-                transition: 0.3s;
+               .hover-btn();
+            }
+            &:active {
+                .click-btn()
             }
         }
-    }
-}
-
-footer {
-    padding: 0 8rem;
-    p {
-        font-size: 15px;
-        line-height: 24px;
-        color: rgba(0, 0, 0, 0.4);
-        top: 90%;
-        position: absolute;
     }
 }
