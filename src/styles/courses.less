@@ -4,13 +4,14 @@
     }
 }
 
-.wrapper-courses {
+.courses {
     .align-block();
-    
+
     &__load {
         .function-button();
         width: 100%;
         margin-bottom: 68px;
+
         &:hover {
             .hover-btn();
         }
@@ -21,39 +22,36 @@
     }
 }
 
-.wrapper-header {
-    &__elems {
+.header {
+    &__login,
+    &__logout {
         .flex-items-center();
+    }
 
-        &-people,
-        &-logout {
-            .flex-items-center();
+    &__login {
+        margin-right: 2rem;
+        margin-left: auto;
+
+        &-icon {
+            margin-right: 0.75rem;
         }
 
-        &-people {
-            margin-right: 2rem;
-
-            img {
-                margin-right: 0.75rem;
-            }
-
-            span {
-                font-weight: 500;
-                font-size: 15px;
-                line-height: 24px;
-                color: @color-text;
-            }
+        &-name {
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 24px;
+            color: @color-text;
         }
+    }
 
-        &-logout {
-            img {
-                margin-right: 3px;
-            }
+    &__logout {
+        &-icon {
+            margin-right: 3px;
         }
     }
 }
 
-.wrapper-search {
+.search {
     .flex-space-between-center();
     padding: 2rem 0;
 
@@ -69,7 +67,7 @@
         }
     }
 
-    input {
+    &__input {
         .text-input();
         width: 587px;
         margin-right: 16px;
@@ -84,7 +82,7 @@
     }
 }
 
-.course-block {
+.course {
     .flex-space-between();
     padding: 20px 32px 24px;
     background: @white;
@@ -97,10 +95,10 @@
     }
 
     &__date {
-        font-family: "NeueHaasUnicaW1G-Regular";
+        font-family: @font-family-courses;
         font-size: 13px;
         line-height: 16px;
-        color: rgba(0, 0, 0, 0.4);
+        color: @dark-grey;
     }
 
     &__title {
@@ -114,7 +112,7 @@
     &__time {
         .flex-items-center();
         padding: 4px 8px;
-        background: rgba(0, 0, 0, 0.08);
+        background: @saturated-gray;
         border-radius: 12px;
         height: fit-content;
         font-size: 13px;
@@ -132,8 +130,9 @@
     &__description {
         font-size: 15px;
         line-height: 24px;
-        color: rgba(0, 0, 0, 0.54);
+        color: @dark;
     }
+
     &:nth-child(1) {
         margin-top: 39px;
     }
@@ -147,9 +146,10 @@
         margin-bottom: 16px;
         margin-top: 8px;
 
-        img {
+        &-icon {
             margin-right: 11px;
         }
+
         &:hover {
             .hover-btn();
         }
@@ -162,15 +162,16 @@
     &__delete {
         .function-button();
         .flex-center();
-        background-color: rgba(224, 31, 25, 0.12);
+        background-color: @delete-btn;
         color: @color-red;
         width: 128px;
         font-size: 15px;
         height: 40px;
 
-        img {
+        &-icon {
             margin-right: 11px;
         }
+
         &:hover {
             .hover-btn-red();
         }

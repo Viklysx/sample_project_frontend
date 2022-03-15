@@ -1,0 +1,9 @@
+{% macro button(title, classImg, classBtn, icon, alt) %}
+
+<button class="{{ classBtn }}">
+    <img src="{{ icon }}" alt="{{ alt }}" class="{{ classImg }}">
+    <span>{{ title }}</span>
+</button>
+
+
+{% endmacro %}

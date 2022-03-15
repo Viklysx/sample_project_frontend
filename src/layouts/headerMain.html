@@ -1,17 +1,15 @@
 <header>
-    <div class="wrapper wrapper-header">
-            <img src="img/Coursenta.svg" alt="logo">
-        <div class="wrapper-header__elems">
-            <div class="wrapper-header__elems-people">
-                <img src="../img/pepople.svg" alt="people">
-                <span>{{ data.name }}</span>
-            </div>
-            <div class="wrapper-header__elems-logout">
-                <img src="../img/Icon.svg" alt="">
-                <button class="wrapper-header__btn-login">
-                    Log out
-                </button>
-            </div>
-        </div>         
+    <div class="centering-block header">
+        <img src="img/coursenta.svg" alt="logo">
+        <div class="header__login">
+            <img src="../img/login_icon.svg" alt="login icon" class="header__login-icon">
+            <span class="header__login-name">{{ data.name }}</span>
+        </div>
+        <div class="header__logout">
+            <img src="../img/logout.svg" alt="logout icon" class="header__logout-icon">
+            <button class="header__btn-login">
+                Log out
+            </button>
+        </div>
     </div>
 </header>

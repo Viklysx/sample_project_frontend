@@ -2,85 +2,91 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;   
+    justify-content: space-between;
+
     footer {
         padding-bottom: 39px;
     }
 }
 
-.wrapper {
+.centering-block {
     .align-block();
 
-    &-header {
-        .flex-space-between();
+    
+}
 
-        img {
-            cursor: pointer;
+.header {
+    .flex-space-between();
+
+    &__icon {
+        cursor: pointer;
+    }
+
+    &__btn-login {
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 24px;
+        color: @color-btn;
+        border: none;
+        background-color: @white;
+        cursor: pointer;
+    }
+}
+
+.login {
+    width: 29rem;
+    height: 20.5rem;
+    margin: 0 auto;
+    background-color: @white;
+    padding: 20px 32px 32px 32px;
+    .flex-column();
+    justify-content: space-between;
+    box-shadow: 0px 4px 12px @color-shadow;
+    border-radius: 12px;
+
+    &__text {
+        .flex-column();
+
+        &-input {
+            .text-input();
+            margin-top: 8px;
+
+            &:hover {
+                .hover-input();
+            }
+
+            &:focus {
+                .focus-input();
+            }
         }
 
-        &__btn-login {
-            font-family: Roboto;
-            font-weight: 500;
+        &-label {
             font-size: 15px;
+            font-weight: 500;
             line-height: 24px;
-            color: @color-btn;
-            border: none;
-            background-color: @white;
-            cursor: pointer;
+            color: @color-text;
+            outline: none;
         }
     }
 
-    &-login {
-        width: 29rem;
-        height: 20.5rem;
-        margin: 0 auto;
-        background-color: @white;
-        padding: 20px 32px 32px 32px;
-        .flex-column();
-        justify-content: space-between;
-        box-shadow: 0px 4px 12px @color-shadow;
-        border-radius: 12px;
+    &__title {
+        font-size: 24px;
+        line-height: 40px;
+        color: @color-text;
+    }
 
-        &__text {
-            .flex-column();
+    &__btn {
+        .flex-center();
+        .function-button();
+        width: 107px;
 
-            input {
-                .text-input();
-                margin-top: 8px;
-                &:hover {
-                    .hover-input();
-                }
-
-                &:focus {
-                    .focus-input();
-                }
-            }
-
-            label {
-                font-size: 15px;
-                font-weight: 500;
-                line-height: 24px;
-                color: @color-text;
-                outline: none;
-            }
+        &:hover {
+            .hover-btn();
         }
 
-        &__title {
-            font-size: 24px;
-            line-height: 40px;
-            color: @color-text;
-        }
-
-        &__btn {
-            .flex-center();   
-            .function-button();       
-            width: 107px;
-            &:hover {
-               .hover-btn();
-            }
-            &:active {
-                .click-btn()
-            }
+        &:active {
+            .click-btn()
         }
     }
 }

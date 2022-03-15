@@ -1,39 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="css/index.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap"
-        rel="stylesheet">
-</head>
-
+{% include './head.html' %}
 <body class="login-page">
-    {% include './headerLogin.html' %}  
+    {% include './headerLogin.html' %}
     <main>
-        <div class="wrapper">
-            <form action="" class="wrapper-login">
-                <div class="wrapper-login__title">Login</div>
-                <div class="wrapper-login__text">
-                    <label for="mail">Email</label>
-                    <input type="text" id="mail">
+        <div class="centering-block">
+            <form action="" class="login">
+                <div class="login__title">Login</div>
+                <div class="login__text">
+                    <label for="mail" class="login__text-label">Email</label>
+                    <input type="mail" id="mail" class="login__text-input">
                 </div>
-                <div class="wrapper-login__text">
-                    <label for="pass">Password</label>
-                    <input type="password">
+                <div class="login__text">
+                    <label for="pass" class="login__text-label">Password</label>
+                    <input type="password" id="pass" class="login__text-input">
                 </div>
-                <button class="wrapper-login__btn">
+                <button class="login__btn">
                     Login
                 </button>
             </form>
         </div>
     </main>
-    {% include './footer.html' %}  
+    {% include './footer.html' %}
 </body>
 
 </html>

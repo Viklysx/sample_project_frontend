@@ -1,0 +1,83 @@
+.hover-btn {
+    background: @btn-hover;
+    transition: @transitions;
+}
+
+.hover-btn-red {
+    background: @delete-btn-hover;
+    transition: @transitions;
+}
+
+.hover-input {
+    border: 1px solid @input-hover;
+    transition: @transitions;
+}
+
+.focus-input {
+    border: 1px solid @input-focus;
+}
+
+.click-btn {
+    background: @btn-click;
+}
+
+.click-btn-red {
+    background: @delete-btn-click;
+}
+
+.align-block {
+    max-width: 1104px;
+    margin: 0 auto;
+}
+
+.flex-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-space-between-center {
+    .flex-items-center();
+    justify-content: space-between;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    .flex-items-center();
+    justify-content: center;
+}
+
+.function-button {
+    font-family: Roboto;
+    background: @btn-bg;
+    border: none;
+    border-radius: 40px;
+    color: @color-btn;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    transition: @transitions;
+    padding: 12px 32px;
+}
+
+.text-input {
+    font-family: Roboto;
+    font-weight: 400;
+    padding: 12px 16px;
+    border: 1px solid @border-gray;
+    box-sizing: border-box;
+    border-radius: 3px;
+    outline: none;
+    transition: @transitions;
+    font-size: 17px;
+    color: @color-text;
+}

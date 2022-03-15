@@ -19,7 +19,7 @@ function htmlTask() {
     const compileOptions = {
         
     }
-    return src(['index.html'].map(s => join('src', s)))
+    return src(['index.html', 'login.html'].map(s => join('src', s)))
         .pipe(nunjucks.compile(undefined, {
             env: new _nunjucks.Environment(new _nunjucks.FileSystemLoader(join(__dirname, 'src')), compileOptions),
             ...compileOptions
