@@ -1,11 +1,11 @@
 <div class="centering-block search">
     <div>
         <form action="">
-            <input type="text" placeholder="Name, fragment or date" class="search__input">
-            <button class="search__btn">Search</button>
+            <input type="text" placeholder="Name, fragment or date" class="search__input"> 
+            {{ macro.button("Search", "search__btn") }}
         </form>
     </div>
     <div>
-        <button class="search__btn">+ Add course</button>
+        {{ macro.button("+ Add course", "search__btn") }}
     </div>
 </div>

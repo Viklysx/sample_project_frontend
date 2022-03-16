@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include './head.html' %}
+
 <body class="courses-page">
     {% include './headerMain.html' %}
     <main>
@@ -35,15 +36,13 @@
                     </div>
                 </div>
                 <div>
-                    {{ macro.button("Edit", "course__edit-icon", "course__edit", "img/edit.svg", "edit") }}
-                    {{ macro.button("Delete", "course__delete-icon", "course__delete", "img/delete.svg", "delete") }}
+                    {{ macro.button("Edit", "course__edit", "course__edit-icon", "img/edit.svg") }} 
+                    {{ macro.button("Delete", "course__delete", "course__delete-icon", "img/delete.svg") }}
                 </div>
             </div>
             {% endfor %}
             <div>
-                <button class="courses__load">
-                    Load more
-                </button>
+                {{ macro.button("Load more", "courses__load") }}
             </div>
         </div>
     </main>
