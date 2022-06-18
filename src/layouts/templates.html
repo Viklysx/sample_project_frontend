@@ -1,0 +1,17 @@
+<!--
+    все что внутри raw nunjucks будет игнорировать
+    https://mozilla.github.io/nunjucks/templating.html#raw
+-->
+{% raw %}
+<script id="entry-template" type="text/x-handlebars-template">
+    <!-- <div class="body">
+        {{#bold}}{{body}}{{/bold}}
+    </div> -->
+    <div class="entry">
+      <h1>{{title}}</h1>
+      <div class="body">
+        {{body}}
+      </div>
+    </div>
+</script>
+{% endraw %}
