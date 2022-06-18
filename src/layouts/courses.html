@@ -2,13 +2,24 @@
 <html lang="en">
 {% include './head.html' %}
 
-<body class="courses-page">
+<body class="courses-page">  
     {% include './headerMain.html' %}
     <main>
         {% include './search.html' %}
         <hr>
         <div class="courses">
-            {% for item in data.courses %}
+            <script id="entry-template" type="text/x-handlebars-template">
+                <!-- <div class="body">
+                    {{#bold}}{{body}}{{/bold}}
+                </div> -->
+                <div class="entry">
+                  <h1>{{title}}</h1>
+                  <div class="body">
+                    {{body}}
+                  </div>
+                </div>
+            </script>
+            {% for item in data.courses %}         
             <div class="course">
                 <div class="course__content">
                     <div>
@@ -47,6 +58,7 @@
         </div>
     </main>
     {% include './footer.html' %}
+    <script src="main.js"></script>
 </body>
 
 </html>

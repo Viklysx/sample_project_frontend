@@ -12,6 +12,8 @@ const rename = require('gulp-rename');
 const jsOrder = require('./src/scripts/order.js');
 const nunjucks = require('gulp-nunjucks');
 const _nunjucks = require('nunjucks');
+const gulp = require('gulp');
+const webpack = require('webpack-stream');
 
 let isProd = false;
 
@@ -42,11 +44,26 @@ function imgTask() {
         .pipe(dest('dist/img'));
 }
 
-function jsTask() {
-    return src(jsOrder.map(s => join('src/scripts', s)))
-        .pipe(concat('index.js'))
-        .pipe(gulpif(() => isProd, uglify()))
-        .pipe(dest('dist/js'));
+function webpackTask() {
+    return gulp.src('src/scripts/index.js')
+        .pipe(webpack({
+            mode: 'development',
+            module: {
+                rules: [
+                    {
+                        test: /\.js$/,
+                        exclude: /(node_modules)/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: ['@babel/preset-env']
+                            }
+                        }
+                    }
+                ],
+            },
+        }))
+        .pipe(gulp.dest('dist/'));
 }
 
 function serve() {
@@ -59,7 +76,7 @@ function serve() {
     watch('src/img/*', imgTask);
     watch('src/styles/**/*.less', cssTask);
     watch('src/**/*.html', htmlTask);
-    watch('src/scripts/**/*.js', jsTask);
+    watch('src/scripts/**/*.js', webpackTask);
 
     watch("dist/**/*")
         .on('change', browserSync.reload);
@@ -81,7 +98,7 @@ module.exports = {
             htmlTask,
             cssTask,
             imgTask,
-            jsTask
+            webpackTask
         ),
         serve
     ),
@@ -92,7 +109,7 @@ module.exports = {
             htmlTask,
             cssTask,
             imgTask,
-            jsTask
+            webpackTask
         )
     )
 };
