@@ -8,43 +8,13 @@
         {% include './search.html' %}
         <hr>
         <div class="courses">
-            {% for item in data.courses %}
-            <div class="course">
-                <div class="course__content">
-                    <div>
-                        <p class="course__date">
-                            {{item.date}}
-                        </p>
-                    </div>
-                    <div class="course__title-wrapper">
-                        <p class="course__title">
-                            {{item.title}}
-                        </p>
-                        <p class="course__time">
-                            {{item.duration}}
-                        </p>
-                        {% if item.star === 'true' %}
-                        <p class="course__star">
-                            <img src="img/star.svg" alt="star">
-                        </p>
-                        {% endif %}
-                    </div>
-                    <div>
-                        <p class="course__description">
-                            {{item.description}}
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    {{ macro.button("Edit", "course__edit", "course__edit-icon", "img/edit.svg") }}
-                    {{ macro.button("Delete", "course__delete", "course__delete-icon", "img/delete.svg") }}
-                </div>
+            <div id="courseCatalog">
+
             </div>
-            {% endfor %}
-            <div>
-                {{ macro.button("Load more", "courses__load") }}
-            </div>
-        </div>
+            <div id="loadMore">
+                {{ macro.button("Load more", "courses__load") }} 
+            </div> 
+        </div>          
     </main>
     {% include './footer.html' %}
     {% include './templates.html' %}

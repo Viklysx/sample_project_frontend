@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 app.get("/skills", jsonParser, function (req, res) {
   let skills = fs.readFileSync('./data.json', 'utf8');
   let skillsContent = JSON.parse(skills);
-  res.json(skillsContent.skills);  
+  res.json(skillsContent);  
 });
 
 app.listen(4000, () => {

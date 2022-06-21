@@ -4,14 +4,35 @@
 -->
 {% raw %}
 <script id="entry-template" type="text/x-handlebars-template">
-    <!-- <div class="body">
-        {{#bold}}{{body}}{{/bold}}
-    </div> -->
-    <div class="entry">
-      <h1>{{title}}</h1>
-      <div class="body">
-        {{body}}
-      </div>
+  {{#each skills}}
+    <div class="course">
+      <div class="course__content">
+        <div>
+            <p class="course__date">
+                {{this.date}}
+            </p>
+        </div>
+        <div class="course__title-wrapper">
+            <p class="course__title">
+                {{this.title}}
+            </p>
+            <p class="course__time">
+                {{this.duration}}
+            </p>
+        </div>
+        <div>
+            <p class="course__description">
+                {{this.description}}
+            </p>
+        </div>
+      </div>       
+      <div>
+        {% endraw %}
+          {{ macro.button("Edit", "course__edit", "course__edit-icon", "img/edit.svg") }}
+          {{ macro.button("Delete", "course__delete", "course__delete-icon", "img/delete.svg") }}
+        {% raw %}
+      </div>    
     </div>
+    {{/each}}   
 </script>
 {% endraw %}

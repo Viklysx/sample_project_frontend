@@ -19,6 +19,15 @@
         &:active {
             .click-btn()
         }
+
+        &_hidden {
+            display: none;
+        }
+
+        &_disabled {
+            opacity: 0.56;
+            pointer-events: none;
+        }
     }
 }
 
@@ -79,6 +88,10 @@
         &:focus {
             .focus-input();
         }
+    }
+
+    &_hidden {
+        display: none;
     }
 }
 
