@@ -1,153 +1,180 @@
 {
-    "skills": [{
-            "id": "1",
-            "title": "Video Course 1",
-            "date": "02.29.2018",           
-            "duration": 90,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "2",
-            "title": "Video Course 2",
-            "date": "02.29.2018",           
-            "duration": 65,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "3",
-            "title": "Video Course 3",
-            "date": "02.29.2018",           
-            "duration": 80,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "4",
-            "title": "Video Course 4",
-            "date": "02.29.2018",           
-            "duration": 50,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "5",
-            "title": "Video Course 5",
-            "date": "02.29.2018",           
-            "duration": 90,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "6",
-            "title": "Video Course 6",
-            "date": "02.29.2018",           
-            "duration": 90,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "7",
-            "title": "Video Course 7",
-            "date": "02.29.2018",           
-            "duration": 120,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "8",
-            "title": "Video Course 8",
-            "date": "02.29.2018",           
-            "duration": 90,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "9",
-            "title": "Video Course 9",
-            "date": "02.29.2018",           
-            "duration": 70,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "10",
-            "title": "Video Course 10",
-            "date": "02.29.2018",           
-            "duration": 75,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "11",
-            "title": "Video Course 11",
-            "date": "02.29.2018",           
-            "duration": 90,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "12",
-            "title": "Video Course 12",
-            "date": "02.29.2018",           
-            "duration": 65,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "13",
-            "title": "Video Course 13",
-            "date": "02.29.2018",           
-            "duration": 80,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "14",
-            "title": "Video Course 14",
-            "date": "02.29.2018",           
-            "duration": 50,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        },
-        {
-            "id": "15",
-            "title": "Video Course 15",
-            "date": "02.29.2018",           
-            "duration": 90,
-            "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
-            "authors": [
-                "Nikolay Ivanov", "Alex Vladimirov"
-            ]
-        }
+ "skills": [
+  {
+   "id": "1",
+   "title": "Video Course 1",
+   "date": "02.29.2018",
+   "duration": 90,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "2",
+   "title": "Video Course 2",
+   "date": "02.29.2018",
+   "duration": 65,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "3",
+   "title": "Video Course 3",
+   "date": "02.29.2018",
+   "duration": 80,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "4",
+   "title": "Video Course 4",
+   "date": "02.29.2018",
+   "duration": 50,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "5",
+   "title": "Video Course 5",
+   "date": "02.29.2018",
+   "duration": 90,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "6",
+   "title": "Video Course 6",
+   "date": "02.29.2018",
+   "duration": 90,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "7",
+   "title": "Video Course 7",
+   "date": "02.29.2018",
+   "duration": 120,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "8",
+   "title": "Video Course 8",
+   "date": "02.29.2018",
+   "duration": 90,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "9",
+   "title": "Video Course 9",
+   "date": "02.29.2018",
+   "duration": 70,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "10",
+   "title": "Video Course 10",
+   "date": "02.29.2018",
+   "duration": 70,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "11",
+   "title": "Video Course 11",
+   "date": "02.29.2018",
+   "duration": 70,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "12",
+   "title": "Video Course 12",
+   "date": "02.29.2018",
+   "duration": 65,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "13",
+   "title": "Video Course 13",
+   "date": "02.29.2018",
+   "duration": 80,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "14",
+   "title": "Video Course 14",
+   "date": "02.29.2018",
+   "duration": 80,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+   "id": "15",
+   "title": "Video Course 15",
+   "date": "02.29.2018",
+   "duration": 80,
+   "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+   "authors": [
+    "Nikolay Ivanov",
+    "Alex Vladimirov"
+   ]
+  },
+  {
+    "id": "16",
+    "title": "Video Course 16",
+    "date": "02.29.2018",
+    "duration": 80,
+    "description": "Create a repository at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to create initial a project Run the project by executing “ng serve” Explore a project structure Setup TS lint according to your preferences (indentation, spacing...)",
+    "authors": [
+     "Nikolay Ivanov",
+     "Alex Vladimirov"
     ]
+   }
+ ]
 }

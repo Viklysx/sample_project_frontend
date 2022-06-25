@@ -13,9 +13,29 @@ app.get('/', function (req, res) {
 app.get("/skills", jsonParser, function (req, res) {
   let skills = fs.readFileSync('./data.json', 'utf8');
   let skillsContent = JSON.parse(skills);
-  res.json(skillsContent);  
+  res.json(skillsContent);
+});
+
+app.post("/deleteCourse", jsonParser, function (req, res) {
+  if (!req.body) return res.sendStatus(400);
+  fs.readFile('./data.json', 'utf8', function readFileCallback(err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      let dataObject = JSON.parse(data);
+      let index = dataObject.skills.indexOf(dataObject.skills.find(element => element.id === req.body.courseId));
+      dataObject.skills.splice(index, 1);
+      let json = JSON.stringify(dataObject, null, 1);
+      fs.writeFile('./data.json', json, 'utf8', (err) => {
+        if (err) {
+          console.log(`Error: ${err}`);
+        }
+      });
+    }
+  });
+  res.json(req.body);
 });
 
 app.listen(4000, () => {
-    console.log('server started in port ', 4000)
+  console.log('server started in port ', 4000)
 })
