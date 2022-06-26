@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include './head.html' %}
+
+<body class="courses-page">
+    {% include './headerMain.html' %}
+    <main>
+        <div class="courses">
+            <form action="" class="edit">
+                <div class="edit__title">Edit course</div>
+                <div class="edit__content">
+                    <div class="edit__text">
+                        <label for="title" class="edit__text-label">Title</label>
+                        <input type="text" id="title" class="edit__text-input">
+                    </div>
+                    <div class="edit__text">
+                        <label for="date" class="edit__text-label">Date</label>
+                        <input type="text" id="date" class="edit__text-input">
+                    </div>
+                    <div class="edit__text">
+                        <label for="duration" class="edit__text-label">Duration</label>
+                        <input type="text" id="duration" class="edit__text-input">
+                    </div>  
+                    <div class="edit__text-description">
+                        <label for="description" class="edit__text-description-label">Description</label>
+                        <textarea id="description" class="edit__text-description-textarea"></textarea>
+                    </div>     
+                    <div class="edit__text-author">
+                        <span class="edit__text-author-span">Authors</span>
+                        <div id="authors" class="edit__text-authors"></div>
+                    </div>  
+                    <div class="edit__content-buttons">
+                        {{ macro.button("Save", "edit__save") }} 
+                        {{ macro.button("Cancel", "edit__cancel") }}   
+                    </div>                          
+                </div>
+            </form>
+        </div>
+    </main>
+    {% include './footer.html' %}
+    {% include './templates.html' %}
+</body>
+
+</html>
