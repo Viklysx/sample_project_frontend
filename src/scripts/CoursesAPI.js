@@ -24,18 +24,6 @@ export default class CoursesAPI {
         return response.json();
     }
 
-    // getAllCourses() {
-    //     let skills;
-    //     let xhr = new XMLHttpRequest();
-    //     xhr.open("GET", `${this.url}/skills`, false);
-    //     xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-    //     xhr.send();
-    //     if (xhr.status === 200) {
-    //         skills = JSON.parse(xhr.response);
-    //         return skills;
-    //     };
-    // }
-
     deleteCourse(courseId) {
         const idValue = {
             courseId

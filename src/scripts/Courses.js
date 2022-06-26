@@ -9,8 +9,6 @@ export default class Courses {
     }
 
     loadCourses() {
-        // const courses = this.coursesAPI.getAllCourses();
-        // this.setCourses(courses);
         this.coursesAPI.getData("skills")
             .then(courses => this.setCourses(courses))
     }
@@ -21,7 +19,7 @@ export default class Courses {
 
     handlers() {
         return {
-            deleteCourse: async (courseId) =>{
+            deleteCourse: async (courseId) => {
                 await this.coursesAPI.deleteCourse(courseId);
                 this.loadCourses();
             }
