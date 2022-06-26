@@ -3,7 +3,7 @@ export default class CoursesAPI {
         this.url = "http://localhost:4000";
     }
 
-    async posthData(route, data = {}) {
+    async postData(route, data = {}) {
         const response = await fetch(`${this.url}/${route}`, {
             method: "POST",
             headers: {
@@ -11,6 +11,7 @@ export default class CoursesAPI {
             },
             body: JSON.stringify(data)
         });
+
         return response.json();
     }
 
@@ -21,6 +22,7 @@ export default class CoursesAPI {
                 "Content-Type": "application/json"
             }
         });
+
         return response.json();
     }
 
@@ -29,7 +31,18 @@ export default class CoursesAPI {
             courseId
         };
 
-        return this.posthData("deleteCourse", idValue)
+        return this.postData("deleteCourse", idValue)
+            .then((data) => {
+                return data;
+            });
+    }
+
+    searchCourse(value) {
+        const valueInput = {
+            value
+        };
+
+        return this.postData("searchCourses", valueInput)
             .then((data) => {
                 return data;
             });

@@ -1,17 +1,19 @@
+import Utils from "./utils/Utils";
+
 export default class CoursesView {
-    constructor({
-        deleteCourse
-    }) {
+    constructor({deleteCourse, searchCourse}) {
         this.search = document.querySelector(".search");
         this.searchButton = document.querySelector(".search__btn");
         this.searchValue = document.querySelector(".search__input");
         this.loadCourses = document.querySelector(".courses__load");
         this.courseCatalog = document.querySelector('#courseCatalog');
         this.deleteCourse = deleteCourse;
+        this.searchCourse = searchCourse;
         this.coursesLength = "";
         this.coursesListCount = "";
         this.courses = {};
         this.handlerClickLoadMore();
+        this.handlerClickSearch();
     }
 
     coursesList(courses) {
@@ -24,6 +26,8 @@ export default class CoursesView {
 
         if (this.coursesLength <= 10) {
             this.loadCourses.classList.add("courses__load_disabled")
+        } else {
+            this.loadCourses.classList.remove("courses__load_disabled")
         }
     }
 
@@ -33,13 +37,12 @@ export default class CoursesView {
         let count = (coursesLength >= amount) ? amount : coursesLength;
 
         for (let i = index; i < (index + count); i++) {
-            courses.skills[i].duration = this.getTimeInHours(courses.skills[i].duration);
+            courses.skills[i].duration = Utils.getTimeInHours(courses.skills[i].duration);
             skills.push(courses.skills[i]);
         }
 
         coursesContent.skills = skills;
         this.coursesListView(coursesContent);
-        // this.handlerClickSearch(courses)
 
         return (coursesLength - count);
     }
@@ -68,38 +71,25 @@ export default class CoursesView {
         })      
     }
 
-    handlerClickSearch(courses) {
-        let coursesContent = {};
-        let matchesCourses = [];
+    handlerClickSearch() {
         this.searchButton.addEventListener("click", (e) => {
             e.preventDefault();
             const searchValue = this.searchValue.value.trim().toLowerCase();
-            
             if (searchValue !== '') {
                 this.courseCatalog.innerHTML = "";
-                courses.skills.forEach(course => {
-                    if (course.title.toLowerCase().indexOf(searchValue) !== -1 || course.description.toLowerCase().indexOf(searchValue) !== -1) {
-                        matchesCourses.push(course)
-                    }
-                })
-
-                coursesContent.skills = matchesCourses;
-                this.coursesListView(coursesContent);
+                this.searchCourse(searchValue);
+            } else {
             }
         })
     }
 
-    handlerClickLoadMore(courses) {    
+    handlerClickLoadMore() {    
         this.loadCourses.addEventListener("click", () => {
             this.coursesListCount = this.coursesListAdd(this.courses, this.coursesLength - this.coursesListCount, this.coursesListCount, 5);
-            
+
             if (this.coursesListCount === 0) {
                 this.loadCourses.classList.add("courses__load_disabled");
             }
         })
     }
-
-    getTimeInHours(minutes) {
-        return `${Math.trunc(minutes/60)} h ${minutes % 60} min`;
-    };
 }
