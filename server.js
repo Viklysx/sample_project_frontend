@@ -38,23 +38,20 @@ app.post("/deleteCourse", jsonParser, function (req, res) {
 
 app.post("/searchCourses", jsonParser, function (req, res) {
   if (!req.body) return res.sendStatus(400);
-  let courses = {
-    skills: []
-  };
   fs.readFile('./data.json', 'utf8', function readFileCallback(err, data) {
     if (err) {
       console.log(err);
     } else {
-      let dataObject = JSON.parse(data);
-      dataObject.skills.map((course) => {
-        if (course.title.toLowerCase().indexOf(req.body.value) !== -1 || course.description.toLowerCase().indexOf(req.body.value) !== -1) {
-          courses.skills.push(course)
-        }
+      const dataObject = JSON.parse(data);
+      const skills = dataObject.skills.filter(({title, description}) => {
+        return title.toLowerCase().includes(req.body.value) || description.toLowerCase().includes(req.body.value) 
       })
-      res.json(courses);
+      let courses = {
+        skills
+      };
+      res.json(courses)
     }
   });
-  // res.json(courses);
 });
 
 app.listen(4000, () => {
