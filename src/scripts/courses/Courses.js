@@ -1,14 +1,16 @@
-import CoursesAPI from "./CoursesAPI";
+import CoursesRequests from "./CoursesRequests";
 import CoursesView from "./CoursesView";
+import API from "../utils/API";
 export default class Courses {
     constructor () {
-        this.coursesAPI = new CoursesAPI();
+        this.coursesRequests = new CoursesRequests();
+        this.api = new API();
         this.view = new CoursesView(this.handlers());
         this.loadCourses();             
     }
 
     loadCourses() {
-        this.coursesAPI.getData("skills")
+        this.api.getData("skills")
             .then(courses => this.setCourses(courses))     
     }
 
@@ -19,15 +21,15 @@ export default class Courses {
     handlers() {
         return {
             deleteCourse: async (courseId) => {
-                await this.coursesAPI.deleteCourse(courseId);
+                await this.coursesRequests.deleteCourse(courseId);
                 this.loadCourses();
             },
             searchCourse: async (valueInput) => {
-                await this.coursesAPI.searchCourse(valueInput)
+                await this.coursesRequests.searchCourse(valueInput)
                     .then(courses => this.setCourses(courses));
             },
             editCourse: (courseId) => {
-                location.href = `${location.href}/edit.html#id=${courseId}`
+                location.href = `${location.href}edit.html#id=${courseId}`
             }
         }
     }   

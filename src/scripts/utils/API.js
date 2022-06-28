@@ -1,4 +1,4 @@
-export default class CoursesAPI {
+export default class API {
     constructor() {
         this.url = "http://localhost:4000";
     }
@@ -24,27 +24,5 @@ export default class CoursesAPI {
         });
 
         return response.json();
-    }
-
-    deleteCourse(courseId) {
-        const idValue = {
-            courseId
-        };
-
-        return this.postData("deleteCourse", idValue)
-            .then((data) => {
-                return data;
-            });
-    }
-
-    searchCourse(value) {
-        const valueInput = {
-            value
-        };
-
-        return this.postData("searchCourses", valueInput)
-            .then((data) => {
-                return data;
-            });
     }
 }

@@ -36,3 +36,34 @@
     {{/each}}   
 </script>
 {% endraw %}
+
+{% raw %}
+<script id="edit-template" type="text/x-handlebars-template">
+    <div class="edit__text">
+      <label for="title" class="edit__text-label">Title</label>
+      <input type="text" id="title" class="edit__text-input" value={{title}}>
+    </div>
+    <div class="edit__text">
+        <label for="date" class="edit__text-label">Date</label>
+        <input type="text" id="date" class="edit__text-input" value={{date}}>
+    </div>
+    <div class="edit__text">
+        <label for="duration" class="edit__text-label">Duration</label>
+        <input type="text" id="duration" class="edit__text-input" value="{{duration}}">
+    </div>
+    <div class="edit__text-description">
+        <label for="description" class="edit__text-description-label">Description</label>
+        <textarea id="description" class="edit__text-description-textarea">{{description}}</textarea>
+    </div>
+    <div class="edit__text-author">
+        <span class="edit__text-author-span">Authors</span>
+        <div id="authors" class="edit__text-authors">
+          {{#each this.authors}}
+            <div>
+              {{this}}
+            </div>
+          {{/each}}  
+        </div>
+    </div>
+</script>
+{% endraw %}

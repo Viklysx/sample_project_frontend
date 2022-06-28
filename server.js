@@ -54,6 +54,21 @@ app.post("/searchCourses", jsonParser, function (req, res) {
   });
 });
 
+app.post("/loadCourse", jsonParser, function (req, res) {
+  if (!req.body) return res.sendStatus(400);
+  fs.readFile('./data.json', 'utf8', function readFileCallback(err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      const dataObject = JSON.parse(data);
+      const course = dataObject.skills.filter(({id}) => {
+        return (id === req.body.courseId)
+      })
+      res.json(course)
+    }
+  });
+});
+
 app.listen(4000, () => {
   console.log('server started in port ', 4000)
 })

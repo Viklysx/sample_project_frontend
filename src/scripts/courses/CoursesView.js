@@ -48,7 +48,7 @@ export default class CoursesView {
         return (coursesLength - count);
     }
 
-    coursesListView(courses) {       
+    coursesListView(courses) {      
         let source = document.getElementById("entry-template").innerHTML;
         let template = Handlebars.compile(source);
         let context = courses;
