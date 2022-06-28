@@ -1,8 +1,11 @@
 import Utils from "../utils/Utils";
 
 export default class EditView {
-    constructor() {
+    constructor(idCourse) {
+        this.idCourse = idCourse;
         this.courseContent = document.querySelector('#courseContent');
+        this.cancel = document.querySelector('.edit__cancel');
+        this.save = document.querySelector('.edit__save');
     }
 
     courseContentView(content) {
@@ -13,5 +16,26 @@ export default class EditView {
         let html = template(context);
 
         this.courseContent.innerHTML = html;
+
+        this.handlerClickCancel();
+        this.handlerClickSave();
+    }
+
+    handlerClickCancel() {
+        this.cancel.addEventListener("click", (e) => {
+            e.preventDefault();
+            location.href = location.origin;
+        })
+    }
+
+    handlerClickSave() {
+        this.save.addEventListener("click", (e) => {
+            e.preventDefault();
+            const formNode = document.querySelector('#editForm');
+            const { elements } = formNode;
+            Array.from(elements).forEach((element) => {
+            })
+            // location.href = location.origin;
+        })
     }
 }

@@ -88,3 +88,25 @@
         margin-top: 24px;
     }
 }
+
+.spinner {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    border-top: 4px solid @white;
+    border-right: 4px solid @white;
+    border-bottom: 4px solid @spinner;
+    border-left: 4px solid @spinner;
+    animation: loading 1.2s infinite linear;
+}
+
+@keyframes loading {
+	to { transform: rotate(360deg); }
+}

@@ -4,16 +4,15 @@ import EditView from "./EditView";
 
 export default class Edit {
     constructor() {
+        this.idCourse = location.hash.split("=")[1];
         this.editRequest = new EditRequest();
         this.api = new API();
-        this.view = new EditView()
+        this.view = new EditView(this.idCourse)
         this.loadDataCourse(); 
     }
 
-    async loadDataCourse() {
-        const idCourse = location.hash.split("=")[1];
-        
-        await this.editRequest.loadCourse(idCourse)
+    async loadDataCourse() {       
+        await this.editRequest.loadCourse(this.idCourse)
             .then(courseData => this.setDataCourse(courseData)) 
     }
 
