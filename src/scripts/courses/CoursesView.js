@@ -1,7 +1,7 @@
-import Utils from "./utils/Utils";
+import Utils from "../utils/Utils";
 
 export default class CoursesView {
-    constructor({deleteCourse, searchCourse}) {
+    constructor({deleteCourse, searchCourse, editCourse}) {
         this.search = document.querySelector(".search");
         this.searchButton = document.querySelector(".search__btn");
         this.searchValue = document.querySelector(".search__input");
@@ -9,6 +9,7 @@ export default class CoursesView {
         this.courseCatalog = document.querySelector('#courseCatalog');
         this.deleteCourse = deleteCourse;
         this.searchCourse = searchCourse;
+        this.editCourse = editCourse;
         this.coursesLength = "";
         this.coursesListCount = "";
         this.courses = {};
@@ -47,7 +48,7 @@ export default class CoursesView {
         return (coursesLength - count);
     }
 
-    coursesListView(courses) {
+    coursesListView(courses) {       
         let source = document.getElementById("entry-template").innerHTML;
         let template = Handlebars.compile(source);
         let context = courses;
@@ -55,7 +56,14 @@ export default class CoursesView {
 
         this.courseCatalog.insertAdjacentHTML("beforeend", html);
 
-        document.querySelectorAll(".course__delete").forEach(courseCatalogItem => {
+        this.handlerClickDelete();
+        this.handlerClickEdit();            
+    }
+
+    handlerClickDelete() {
+        const courseDeleteButtons = document.querySelectorAll(".course__delete");
+
+        courseDeleteButtons.forEach(courseCatalogItem => {
             courseCatalogItem.addEventListener("click", () => {
                 const deleteCourse = confirm("Are you sure?");
                 if (deleteCourse) {
@@ -68,7 +76,17 @@ export default class CoursesView {
                     }
                 }
             });
-        })      
+        })
+    }
+
+    handlerClickEdit() {
+        const courseEditButtons = document.querySelectorAll(".course__edit");
+
+        courseEditButtons.forEach(courseCatalogItem => {
+            courseCatalogItem.addEventListener("click", () => {
+                this.editCourse(courseCatalogItem.parentNode.parentNode.id);
+            });
+        })
     }
 
     handlerClickSearch() {

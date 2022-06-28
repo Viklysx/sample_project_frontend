@@ -21,7 +21,7 @@ function htmlTask() {
     const compileOptions = {
         
     }
-    return src(['index.html', 'login.html', 'courseEdit.html'].map(s => join('src', s)))
+    return src(['index.html', 'login.html', 'edit.html'].map(s => join('src', s)))
         .pipe(nunjucks.compile(undefined, {
             env: new _nunjucks.Environment(new _nunjucks.FileSystemLoader(join(__dirname, 'src')), compileOptions),
             ...compileOptions
@@ -48,6 +48,10 @@ function webpackTask() {
     return gulp.src('src/scripts/index.js')
         .pipe(webpack({
             mode: 'development',
+            entry: {
+                main: './src/scripts/index.js',
+                edit: './src/scripts/edit.js'
+            },
             module: {
                 rules: [
                     {

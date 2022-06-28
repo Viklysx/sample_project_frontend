@@ -25,6 +25,9 @@ export default class Courses {
             searchCourse: async (valueInput) => {
                 await this.coursesAPI.searchCourse(valueInput)
                     .then(courses => this.setCourses(courses));
+            },
+            editCourse: (courseId) => {
+                location.href = `${location.href}/edit.html#id=${courseId}`
             }
         }
     }   
