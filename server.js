@@ -69,6 +69,26 @@ app.post("/loadCourse", jsonParser, function (req, res) {
   });
 });
 
+app.post("/saveCourse", jsonParser, function (req, res) {
+  if (!req.body) return res.sendStatus(400);
+  fs.readFile('./data.json', 'utf8', function readFileCallback(err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      let dataObject = JSON.parse(data);
+      let index = dataObject.skills.indexOf(dataObject.skills.find(element => element.id === req.body.id));
+      dataObject.skills[index] = req.body;
+      let json = JSON.stringify(dataObject, null, 1);
+      fs.writeFile('./data.json', json, 'utf8', (err) => {
+        if (err) {
+          console.log(`Error: ${err}`);
+        }
+      });
+    }
+  });
+  res.json(req.body);
+});
+
 app.listen(4000, () => {
   console.log('server started in port ', 4000)
 })

@@ -57,6 +57,7 @@
 
         &-authors {
             .text-input();
+            display: flex;
             margin-top: 12px;
         }
     }
@@ -74,6 +75,11 @@
         &:active {
             .click-btn()
         }
+
+        &_disabled {
+            opacity: 0.56;
+            pointer-events: none;
+        }
     }
 
     &__cancel {
@@ -89,8 +95,23 @@
     }
 }
 
+.author {
+    .flex-items-center();
+    background: @saturated-gray;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-right: 4px;
+
+    &__name {
+        padding-right: 7px;
+    }
+}
+
+.delete-author {
+    cursor: pointer;
+}
+
 .spinner {
-    position: absolute;
     margin: auto;
     left: 0;
     right: 0;
@@ -98,15 +119,17 @@
     bottom: 0;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    background: transparent;
-    border-top: 4px solid @white;
-    border-right: 4px solid @white;
-    border-bottom: 4px solid @spinner;
-    border-left: 4px solid @spinner;
-    animation: loading 1.2s infinite linear;
+    .spinner-mixin();
 }
 
 @keyframes loading {
-	to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.submit-spinner {
+    width: 20px;
+    height: 20px;
+    .spinner-mixin();
 }

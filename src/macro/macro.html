@@ -1,10 +1,10 @@
 {% macro button(title, classBtn, classImg, icon) %}
 
-<button class="{{ classBtn }} {{ classBtn }}_hidden">
+<button class="{{ classBtn }}">
     {% if icon %}
         <img src="{{ icon }}" alt="{{ title }}" class="{{ classImg }}">
     {% endif %}   
     <span>{{ title }}</span>
 </button> 
-
+ 
 {% endmacro %}

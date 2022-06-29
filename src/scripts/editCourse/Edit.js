@@ -7,7 +7,7 @@ export default class Edit {
         this.idCourse = location.hash.split("=")[1];
         this.editRequest = new EditRequest();
         this.api = new API();
-        this.view = new EditView(this.idCourse)
+        this.view = new EditView(this.idCourse, this.handlers())
         this.loadDataCourse(); 
     }
 
@@ -18,5 +18,16 @@ export default class Edit {
 
     setDataCourse(data) {
         this.view.courseContentView(data);
+    }
+
+    handlers() {
+        return {
+            cancelCourse: () => {
+                location.href = location.origin;
+            },
+            saveCourse: async (data) => {
+                await this.editRequest.saveCourse(data);
+            }
+        }
     }
 }

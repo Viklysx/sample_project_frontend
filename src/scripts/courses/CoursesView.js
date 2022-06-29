@@ -38,7 +38,7 @@ export default class CoursesView {
         let count = (coursesLength >= amount) ? amount : coursesLength;
 
         for (let i = index; i < (index + count); i++) {
-            courses.skills[i].duration = Utils.getTimeInHours(courses.skills[i].duration);
+            courses.skills[i].duration = Utils.getTimeInHoursAndMinutes(courses.skills[i].duration);
             skills.push(courses.skills[i]);
         }
 

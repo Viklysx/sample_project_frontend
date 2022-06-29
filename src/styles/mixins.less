@@ -81,3 +81,14 @@
     font-size: 17px;
     color: @color-text;
 }
+
+.spinner-mixin {
+    position: absolute;
+    border-radius: 50%;
+    background: transparent;
+    border-top: 4px solid @white;
+    border-right: 4px solid @white;
+    border-bottom: 4px solid @spinner;
+    border-left: 4px solid @spinner;
+    animation: loading 1.2s infinite linear;
+}

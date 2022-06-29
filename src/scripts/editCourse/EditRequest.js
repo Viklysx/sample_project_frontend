@@ -16,12 +16,9 @@ export default class EditRequest {
             });
     }
    
-    saveCourse(courseId) {
-        const idValue = {
-            courseId
-        };
-
-        return this.api.postData("saveCourse", idValue)
+    saveCourse(dataCourse) {
+        console.log(dataCourse)
+        return this.api.postData("saveCourse", dataCourse)
             .then((data) => {
                 return data;
             });

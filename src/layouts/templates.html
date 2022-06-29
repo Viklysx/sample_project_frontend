@@ -39,9 +39,10 @@
 
 {% raw %}
 <script id="edit-template" type="text/x-handlebars-template">
+    <input type="text" id="idCourse" value={{id}} hidden>
     <div class="edit__text">
       <label for="title" class="edit__text-label">Title</label>
-      <input type="text" id="title" class="edit__text-input" value={{title}}>
+      <input type="text" id="title" class="edit__text-input" value="{{title}}">
     </div>
     <div class="edit__text">
         <label for="date" class="edit__text-label">Date</label>
@@ -59,11 +60,18 @@
         <span class="edit__text-author-span">Authors</span>
         <div id="authors" class="edit__text-authors">
           {{#each this.authors}}
-            <div>
-              {{this}}
+            <div class="author">
+              <span class="author__name">{{this}}</span>
+              <img src="./img/close.svg" alt="close" class="delete-author">
             </div>
           {{/each}}  
         </div>
-    </div>
+    </div>   
+    <div class="edit__content-buttons">
+      {% endraw %}
+      {{ macro.button("Save", "edit__save") }}
+      {{ macro.button("Cancel", "edit__cancel") }}
+      {% raw %}
+    </div>    
 </script>
 {% endraw %}
